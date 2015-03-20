@@ -4,7 +4,6 @@
  *
  */
 public class Timer {
-	
 	private boolean isRunning = false;
 
 	/**
@@ -17,8 +16,8 @@ public class Timer {
 			isRunning = true;
 			Thread.sleep((long)timeToRun);
 		}catch(InterruptedException e){
-			Thread.currentThread().interrupt();
-			isRunning = false;
+		    Thread.currentThread().interrupt();
+		    isRunning = false;
 		}
 	}
 	
@@ -27,7 +26,6 @@ public class Timer {
 	 * 
 	 * @return If the timer is running or not
 	 */
-	public boolean hasExpired(){
-		return isRunning;
-	}
+	public boolean hasExpired()
+	{ return isRunning; }
 }
