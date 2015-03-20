@@ -2,10 +2,14 @@
 public class SimpleStdBulb implements IStdBulb
 {
     private boolean lightOn;
-    
+    /**
+     * No-arg constructor for creating a simple bulb.
+     */
     public SimpleStdBulb()
     { lightOn = false; }
-    
+    /**
+     * Method inherited from IStdBulb for turning on.
+     */
     public boolean on()
     {
         if(lightOn)
@@ -16,7 +20,9 @@ public class SimpleStdBulb implements IStdBulb
         }
         return lightOn;
     }
-    
+    /**
+     * Method inherited from IStdBulb for turning off.
+     */
     public boolean off()
     {
         if(lightOn){ 
