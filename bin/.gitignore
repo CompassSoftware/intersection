@@ -1,5 +1,1 @@
-/ControlBox.class
-/ISensor.class
-/IStdLamp.class
-/Timer.class
-/StdLeftLamp.class
+*.class
