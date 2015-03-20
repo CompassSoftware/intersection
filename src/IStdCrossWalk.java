@@ -12,4 +12,4 @@ public interface IStdCrossWalk {
 	public boolean walk();
 	public boolean blinkingDontWalk();
 	public boolean dontWalk(); 
-}
+} 
