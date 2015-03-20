@@ -3,7 +3,7 @@
  * @author Nicholas Phillips
  *
  */
-public class StdLeftLamp implements IStdLamp
+public class StdLeftLamp implements IStdLeftLamp
 {
 	/**
 	 * No-arg constructor for creating default StdLeftLamp.
