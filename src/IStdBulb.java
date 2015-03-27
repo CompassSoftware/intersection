@@ -19,4 +19,11 @@ public interface IStdBulb
      */
     public boolean off();
     
+    /**
+    *
+    *
+    *
+    */
+    public boolean isOn();
+    
 }
