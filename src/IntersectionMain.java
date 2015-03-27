@@ -41,6 +41,5 @@ public class IntersectionMain {
 		southRiversRightSensor = new StdSensor();
 		eastCenterSensor = new StdSensor();
 		westCenterSensor = new StdSensor();
-			
 	}
 }
