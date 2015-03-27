@@ -28,6 +28,12 @@ public class DefaultController {
 	private java.util.Timer timer;
 	private TimerTask ticker;
 	
+	/**
+	 * Starts the magic..
+	 * 
+	 * @param mainLamps
+	 * @param sideLamps
+	 */
 	public DefaultController(ILampGroup mainLamps, ILampGroup sideLamps){
 		timeRemaining = 120;
 		this.mainLamps = mainLamps;
@@ -37,26 +43,39 @@ public class DefaultController {
 		timer = new java.util.Timer();
 		timer.scheduleAtFixedRate(ticker, 0, 1000);
 	}
-	
+	/**
+	 * Time getter
+	 * @return int the time remaining until the next state change
+	 */
 	public int getTime(){
 		return timeRemaining;
 	}
-	
+	/**
+	 * Sets the time remaining until next state change
+	 * @param time
+	 */
 	public void setTime(int time){
 		timeRemaining = time;
 	}
-	
+	/**
+	 * another second has gone by
+	 */
 	public void tick(){
 		timeRemaining --;
 		checkStatus();
 	}
 	
+	/**
+	 * Has the timer expired?
+	 */
 	private void checkStatus(){
 		if( timeRemaining == 0){
 			changeState();
 		}
 	}
-	
+	/**
+	 * it's time to change the lights
+	 */
 	private void changeState(){
 		switch( state ){
 		case MAIN_GREEN:
@@ -92,14 +111,23 @@ public class DefaultController {
 		}
 	}
 	
+	/**
+	 * TimerTask class because 
+	 * we can't just pass a function
+	 * as a parameter in java..
+	 * 
+	 * @author tobin
+	 *
+	 */
 	private class Ticker extends TimerTask{
 		/**
+		 * The DefaultController ticks
+		 * when the TimerTask runs it.
+		 * 
 		 * @overide
 		 */
 		public void run(){
 			tick();
 		}
 	}
-	
-
 }
