@@ -9,8 +9,12 @@
 public class IntersectionMain {
 
 	public static IStdLamp northRiversLeftLane;
+	public static IStdLamp CenterStreetLeftLane;
+	public static IStdLamp CenterStreetRightLane;
 	
 	public static void main(String[] args) {
 		northRiversLeftLane = new StdLamp();
+		CenterStreetLeftLane = new StdLamp();
+		CenterStreetRightLane = new StdLamp();
 	}
 }
