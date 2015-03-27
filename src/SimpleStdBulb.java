@@ -12,7 +12,7 @@ public class SimpleStdBulb implements IStdBulb
      */
     public boolean on()
     {
-        if(lightOn)
+        if(isOn())
         { System.out.println("The light is off."); }
         else{
             System.out.println("Turning the light on.");
@@ -25,11 +25,17 @@ public class SimpleStdBulb implements IStdBulb
      */
     public boolean off()
     {
-        if(lightOn){ 
+        if(isOn()){ 
             System.out.println("Turning the light off.");
             lightOn = !lightOn;
         }else
         { System.out.println("The light is off."); }
         return !lightOn;
     }
+    
+    /**
+     * Method inherited from IStdBulb to indicate if on or not.
+     */
+    public boolean isOn()
+    { return lightOn; }
 }
