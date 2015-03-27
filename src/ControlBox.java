@@ -9,7 +9,7 @@ public class ControlBox {
     private Timer timer;
     //private ISensor[] sensors;
     private IStdLamp[] lamps;
-    //private IStdCrossWalk[] crossWalks;
+    private IStdCrossWalk[] crossWalks;
 	/**
 	 * No-arg constructor for creating a a ControlBox with default settings.
 	 */
@@ -18,11 +18,11 @@ public class ControlBox {
 		timer = new Timer();
 		//sensors = new ISensor[4];
 		lamps = new IStdLamp[4];
-		//crossWalks = new IStdCrossWalk[8];
+		crossWalks = new IStdCrossWalk[8];
 		for(int i = 0; i < lamps.length; i++)
 		{ lamps[i] = new StdLamp(); }
-		//for (int i = 0; i < crossWalks.length; i++)
-		//{ crossWalks[i] = new StdCrossWalk(); }
+		for (int i = 0; i < crossWalks.length; i++)
+		{ crossWalks[i] = new StdCrosswalk(); }
 	}
 	
 	/**
