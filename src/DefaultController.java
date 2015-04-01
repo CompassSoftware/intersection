@@ -112,6 +112,22 @@ public class DefaultController {
 	}
 	
 	/**
+	 * @author Nathan Mudford
+	 * @return time until next state change
+	 */
+	public int getTimeRemaining(){
+		return timeRemaining;
+	}
+	
+	/**
+	 * @author Nathan Mudford
+	 * @return state of the intersection
+	 */
+	public int getState(){
+		return state;
+	}
+	
+	/**
 	 * TimerTask class because 
 	 * we can't just pass a function
 	 * as a parameter in java..
