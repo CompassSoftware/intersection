@@ -30,10 +30,12 @@ public class ControlBox {
 	/**
      * Constructor for creating a ControlBox with settings from outside.
      */
-	public ControlBox(IStdLamp[] lamps)
+	public ControlBox(ISensor[] sensors, IStdLamp[] lamps, IStdCrossWalk[] crossWalks)
 	{
 	    timer = new Timer();
+	    this.sensors = sensors;
 	    this.lamps = lamps;
+	    this.crossWalks = crossWalks;
 	}
 	
 	/**
