@@ -21,6 +21,7 @@ public class DefaultControllerTest {
 		MainTest main = t.new MainTest();
 		SideTest side = t.new SideTest();
 		DefaultController d = new DefaultController(main, side);
+		d.start();
 	}
 	/**
 	 * The most basic of test classes to work with
