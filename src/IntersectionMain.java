@@ -11,6 +11,8 @@ public class IntersectionMain {
 	/* This models the Rivers Street and Center Street intersection.
 	 * The one by JET bldg and tennis courts.
 	 */
+	public static ControlBox controlBox;
+
 	public static IStdLamp northRiversLeftLamp;
 	public static IStdLamp northRiversRightLamp;
 	public static IStdLamp southRiversRightLamp;
@@ -27,6 +29,8 @@ public class IntersectionMain {
 	public static ISensor westCenterSensor;
 	
 	public static void main(String[] args) {
+		controlBox = new ControlBox();
+
 		northRiversLeftLamp = new StdLamp();
 		northRiversRightLamp = new StdLamp();
 		southRiversRightLamp = new StdLamp();
