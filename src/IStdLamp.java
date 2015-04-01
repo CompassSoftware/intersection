@@ -5,8 +5,8 @@
  */
 public interface IStdLamp {
 	
-	abstract public boolean red();
-	abstract public boolean yellow();
-	abstract public boolean green();
+	 public boolean red();
+	 public boolean yellow();
+	 public boolean green();
 
 }
