@@ -1,5 +1,5 @@
 /**
- * Class for a StdLamp with left turn green and yellow lights.
+ * Class for a StdLamp with left turn green and yellow bulbs.
  * @author Nicholas Phillips
  *
  */
@@ -22,7 +22,7 @@ public class StdLeftLamp implements IStdLeftLamp
 	}
 	
 	/**
-	 * Method inherited from IStdLamp for turning red.
+	 * Method inherited from IStdLamp for turning bulbs red.
 	 */
 	public boolean red()
 	{
@@ -35,7 +35,7 @@ public class StdLeftLamp implements IStdLeftLamp
 	}
 	
 	/**
-	 * Method inherited from IStdLamp for turning yellow.
+	 * Method inherited from IStdLamp for turning bulbs yellow.
 	 */
 	public boolean yellow()
 	{
@@ -46,6 +46,9 @@ public class StdLeftLamp implements IStdLeftLamp
         return a && c && e && l;
 	}
 	
+	/**
+	 * Method inherited from IStdLeftLamp for turning left bulbs yellow.
+	 */
 	public boolean leftYellow()
 	{
 		boolean b = bulbs[LGREEN].off();
@@ -54,7 +57,7 @@ public class StdLeftLamp implements IStdLeftLamp
 	}
 	
 	/**
-	 * Method inherited from IStdLamp for turning green.
+	 * Method inherited from IStdLamp for turning bulbs green.
 	 */
 	public boolean green()
 	{
@@ -65,6 +68,9 @@ public class StdLeftLamp implements IStdLeftLamp
         return a && c && e && l;
 	}
 	
+	/**
+	 * Method inherited from IStdLeftLamp for turning left bulbs green.
+	 */
 	public boolean leftGreen()
 	{
 		boolean b = bulbs[LYELLOW].off();
