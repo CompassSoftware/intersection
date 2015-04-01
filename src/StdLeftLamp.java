@@ -3,7 +3,7 @@
  * @author Nicholas Phillips
  *
  */
-public class StdLeftLamp implements IStdLamp
+public class StdLeftLamp implements IStdLeftLamp
 {
 	IStdBulb[] bulbs;
     
