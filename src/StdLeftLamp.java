@@ -5,7 +5,12 @@
  */
 public class StdLeftLamp implements IStdLeftLamp
 {
-	IStdBulb[] bulbs;
+	private IStdBulb[] bulbs;
+	private int RED = 0;
+	private int LYELLOW = 1;
+	private int RYELLOW = 2;
+	private int LGREEN = 3;
+	private int RGReen = 4;
     
     /**
 	 * No-arg constructor for creating default StdLeftLamp.
@@ -21,11 +26,11 @@ public class StdLeftLamp implements IStdLeftLamp
 	 */
 	public boolean red()
 	{
-		boolean a = bulbs[1].off();
-		boolean b = bulbs[2].off();
-		boolean c = bulbs[3].off();
-		boolean d = bulbs[4].off();
-		boolean e = bulbs[0].on();
+		boolean a = bulbs[LYELLOW].off();
+		boolean b = bulbs[RYELLOW].off();
+		boolean c = bulbs[LGREEN].off();
+		boolean d = bulbs[RGREEN].off();
+		boolean e = bulbs[RED].on();
 	    return a && b && c && d && e;
 	}
 	
@@ -34,11 +39,11 @@ public class StdLeftLamp implements IStdLeftLamp
 	 */
 	public boolean yellow()
 	{
-	    boolean a = bulbs[0].off();
-	    boolean b = bulbs[3].off();
-	    boolean c = bulbs[4].off();
-	    boolean d = bulbs[1].on();
-	    boolean e = bulbs[2].on();
+	    boolean a = bulbs[RED].off();
+	    boolean b = bulbs[LGREEN].off();
+	    boolean c = bulbs[RGREEN].off();
+	    boolean d = bulbs[LYELLOW].on();
+	    boolean e = bulbs[RYELLOW].on();
         return a && b && c && d && e;
 	}
 	
@@ -47,11 +52,11 @@ public class StdLeftLamp implements IStdLeftLamp
 	 */
 	public boolean green()
 	{
-	    boolean a = bulbs[0].off();
-	    boolean b = bulbs[1].off();
-	    boolean c = bulbs[2].off();
-	    boolean d = bulbs[3].on();
-	    boolean e = bulbs[4].on();
+	    boolean a = bulbs[RED].off();
+	    boolean b = bulbs[LYELLOW].off();
+	    boolean c = bulbs[RYELLOW].off();
+	    boolean d = bulbs[LGREEN].on();
+	    boolean e = bulbs[RGREEN].on();
         return a && b && c && d && e;
 	}
 }
