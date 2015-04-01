@@ -5,6 +5,6 @@
  */
 public interface ISensor {
 	
-	abstract public boolean trip();
+	 public boolean trip();
 
 }

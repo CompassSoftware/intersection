@@ -8,19 +8,42 @@
  */
 public class IntersectionMain {
 
-	public static ControlBox cb;
-	public static IStdLamp northRiversLeftLane;
-	public static IStdLamp CenterStreetLeftLane;
-	public static IStdLamp CenterStreetRightLane;
-	public static ISensor CenterStreetLeftLaneSensor;
-	public static ISensor CenterStreetRightLaneSensor;
+	/* This models the Rivers Street and Center Street intersection.
+	 * The one by JET bldg and tennis courts.
+	 */
+	public static ControlBox controlBox;
+
+	public static IStdLamp northRiversLeftLamp;
+	public static IStdLamp northRiversRightLamp;
+	public static IStdLamp southRiversRightLamp;
+	public static IStdLeftLamp southRiversLeftLamp;
+	public static IStdLamp eastCenterOnlyLamp;
+	public static IStdLamp westCenterOnlyLamp;
+	
+	public static ISensor northRiversLeftSensor;
+	public static ISensor northRiversRightSensor;
+	public static ISensor southRiversLeftNearSensor;
+	public static ISensor southRiversLeftFarSensor;
+	public static ISensor southRiversRightSensor;
+	public static ISensor eastCenterSensor;
+	public static ISensor westCenterSensor;
 	
 	public static void main(String[] args) {
-		cb = new ControlBox();
-		northRiversLeftLane = new StdLamp();
-		CenterStreetLeftLane = new StdLamp();
-		CenterStreetRightLane = new StdLamp();
-		CenterStreetLeftLaneSensor = new Sensor();
-		CenterStreetRightLaneSensor = new Sensor();
+		controlBox = new ControlBox();
+
+		northRiversLeftLamp = new StdLamp();
+		northRiversRightLamp = new StdLamp();
+		southRiversRightLamp = new StdLamp();
+		southRiversLeftLamp = new StdLeftLamp();
+		eastCenterOnlyLamp = new StdLamp();
+		westCenterOnlyLamp = new StdLamp();
+		
+		northRiversLeftSensor = new StdSensor();
+		northRiversRightSensor = new StdSensor();
+		southRiversLeftNearSensor = new StdSensor();
+		southRiversLeftFarSensor = new StdSensor();
+		southRiversRightSensor = new StdSensor();
+		eastCenterSensor = new StdSensor();
+		westCenterSensor = new StdSensor();
 	}
 }

@@ -1,7 +1,11 @@
 
 public class StdLamp implements IStdLamp {
 
-    IStdBulb[] bulbs;
+    private IStdBulb[] bulbs;
+    private static final int RED = 0;
+    private static final int YELLOW = 1;
+    private static final int GREEN = 2;
+    
     /**
      * No-arg constructor for creating default StdLamp.
      */
@@ -12,25 +16,25 @@ public class StdLamp implements IStdLamp {
     }
 	@Override
 	public boolean red() {
-	    boolean a = bulbs[1].off();
-        boolean b = bulbs[2].off();
-        boolean c = bulbs[0].on();
+	    boolean a = bulbs[YELLOW].off();
+        boolean b = bulbs[GREEN].off();
+        boolean c = bulbs[RED].on();
         return a && b && c;
 	}
 
 	@Override
 	public boolean yellow() {
-	    boolean a = bulbs[0].off();
-        boolean b = bulbs[2].off();
-        boolean c = bulbs[1].on();
+	    boolean a = bulbs[RED].off();
+        boolean b = bulbs[GREEN].off();
+        boolean c = bulbs[YELLOW].on();
         return a && b && c;
 	}
 
 	@Override
 	public boolean green() {
-	    boolean a = bulbs[0].off();
-        boolean b = bulbs[1].off();
-        boolean c = bulbs[2].on();
+	    boolean a = bulbs[RED].off();
+        boolean b = bulbs[YELLOW].off();
+        boolean c = bulbs[GREEN].on();
         return a && b && c;
 	}
 
