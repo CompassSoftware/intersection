@@ -8,13 +8,19 @@
  */
 public class IntersectionMain {
 
+	public static ControlBox cb;
 	public static IStdLamp northRiversLeftLane;
 	public static IStdLamp CenterStreetLeftLane;
 	public static IStdLamp CenterStreetRightLane;
+	public static ISensor CenterStreetLeftLaneSensor;
+	public static ISensor CenterStreetRightLaneSensor;
 	
 	public static void main(String[] args) {
+		cb = new ControlBox();
 		northRiversLeftLane = new StdLamp();
 		CenterStreetLeftLane = new StdLamp();
 		CenterStreetRightLane = new StdLamp();
+		CenterStreetLeftLaneSensor = new Sensor();
+		CenterStreetRightLaneSensor = new Sensor();
 	}
 }
