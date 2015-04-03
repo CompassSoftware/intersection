@@ -18,7 +18,7 @@ public class StdLeftLamp implements IStdLeftLamp
 	public StdLeftLamp(){
 		bulbs = new IStdBulb[5];
 		for(int i = 0; i < bulbs.length; i++)
-		{ bulbs[i] = new SimpleStdBulb(); }
+			bulbs[i] = new SimpleStdBulb();
 	}
 	
 	/**
