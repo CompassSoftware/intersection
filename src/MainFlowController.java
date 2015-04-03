@@ -22,7 +22,7 @@ public class MainFlowController implements IController{
 	 */
 	public void performSensorAction(){
 		if( defaultControl.getState() == DefaultController.SIDE_GREEN
-				&& defaultControl.getTime() > 2){
+				&& defaultControl.getTimeRemaining() > 2){
 			defaultControl.setTime( 2 );
 		}
 	}

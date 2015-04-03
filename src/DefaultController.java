@@ -44,6 +44,16 @@ public class DefaultController {
 		
 	}
 	/**
+	 * This seems dangerous,
+	 * but I haven't come up with a better
+	 * way to do testing
+	 * 
+	 * @param newState
+	 */
+	public void setState( int newState ){
+		state = newState;
+	}
+	/**
 	 * starts the traffic controller
 	 */
 	public void start(){
@@ -54,13 +64,6 @@ public class DefaultController {
 	 */
 	public void stop(){
 		timer.cancel();
-	}
-	/**
-	 * Time getter
-	 * @return int the time remaining until the next state change
-	 */
-	public int getTime(){
-		return timeRemaining;
 	}
 	/**
 	 * Sets the time remaining until next state change
@@ -76,14 +79,6 @@ public class DefaultController {
 		timeRemaining --;
 		checkStatus();
 	}
-	
-	/**
-	 * gets the current state
-	 */
-	public int getState(){
-		return state;
-	}
-	
 	/**
 	 * Has the timer expired?
 	 */
