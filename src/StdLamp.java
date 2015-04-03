@@ -12,7 +12,7 @@ public class StdLamp implements IStdLamp {
     public StdLamp(){
         bulbs = new IStdBulb[3];
         for(int i = 0; i < bulbs.length; i++)
-        { bulbs[i] = new SimpleStdBulb(); }
+        	bulbs[i] = new SimpleStdBulb();
     }
 	@Override
 	public boolean red() {
