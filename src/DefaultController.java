@@ -7,12 +7,13 @@ import java.util.TimerTask;
  *
  */
 public class DefaultController {
-	private static final int MAIN_GREEN = 0;
-	private static final int MAIN_YELLOW = 1;
-	private static final int SIDE_GREEN = 2;
-	private static final int SIDE_YELLOW = 3;
-	private static final int SIDE_GREEN_CROSSWALK = 4;
-	private static final int MAIN_GREEN_LEFT_TURN = 5;
+	
+	public static final int MAIN_GREEN = 0;
+	public static final int MAIN_YELLOW = 1;
+	public static final int SIDE_GREEN = 2;
+	public static final int SIDE_YELLOW = 3;
+	public static final int SIDE_GREEN_CROSSWALK = 4;
+	public static final int MAIN_GREEN_LEFT_TURN = 5;
 	
 	private int timeRemaining;
 	
@@ -35,13 +36,24 @@ public class DefaultController {
 	 * @param sideLamps
 	 */
 	public DefaultController(ILampGroup mainLamps, ILampGroup sideLamps){
-		timeRemaining = 120;
+		timeRemaining = 10;
 		this.mainLamps = mainLamps;
 		this.sideLamps = sideLamps;
 		ticker = new Ticker();
-		
 		timer = new java.util.Timer();
+		
+	}
+	/**
+	 * starts the traffic controller
+	 */
+	public void start(){
 		timer.scheduleAtFixedRate(ticker, 0, 1000);
+	}
+	/** stops the traffic controller
+	 * 
+	 */
+	public void stop(){
+		timer.cancel();
 	}
 	/**
 	 * Time getter
@@ -63,6 +75,13 @@ public class DefaultController {
 	public void tick(){
 		timeRemaining --;
 		checkStatus();
+	}
+	
+	/**
+	 * gets the current state
+	 */
+	public int getState(){
+		return state;
 	}
 	
 	/**
@@ -103,11 +122,13 @@ public class DefaultController {
 			sideLamps.red();
 			mainLamps.green();
 			break;
-			
+			/*
 		case SIDE_GREEN_CROSSWALK:
 			// TODO complete this..
 		case MAIN_GREEN_LEFT_TURN:
 			// TODO complete this..
+			 * 
+			 */
 		}
 	}
 	
