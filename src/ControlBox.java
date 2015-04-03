@@ -23,14 +23,14 @@ public class ControlBox {
 	public static ISensor eastCenterSensor;
 	public static ISensor westCenterSensor;
 	
-	public static IStdCrossWalk leftNorthRiverStreetCross;
-	public static IStdCrossWalk rightNorthRiverStreetCross;
-	public static IStdCrossWalk leftSouthRiverStreetCross;
-	public static IStdCrossWalk rightSouthRiverStreetCross;
-	public static IStdCrossWalk topWestCenterStreetCross;
-	public static IStdCrossWalk bottomWestCenterStreetCross;
-	public static IStdCrossWalk topEastCenterStreetCross;
-	public static IStdCrossWalk bottomEastCenterStreetCross;
+	public static StdCrosswalk leftNorthRiverStreetCross;
+	public static StdCrosswalk rightNorthRiverStreetCross;
+	public static StdCrosswalk leftSouthRiverStreetCross;
+	public static StdCrosswalk rightSouthRiverStreetCross;
+	public static StdCrosswalk topWestCenterStreetCross;
+	public static StdCrosswalk bottomWestCenterStreetCross;
+	public static StdCrosswalk topEastCenterStreetCross;
+	public static StdCrosswalk bottomEastCenterStreetCross;
 	/**
 	 * No-arg constructor for creating a a ControlBox with default settings.
 	 */
@@ -61,12 +61,16 @@ public class ControlBox {
 		
 		leftNorthRiverStreetCross = new StdCrosswalk();
 		rightNorthRiverStreetCross = new StdCrosswalk();
+		leftNorthRiverStreetCross.pair(rightNorthRiverStreetCross);
 		leftSouthRiverStreetCross = new StdCrosswalk();
 		rightSouthRiverStreetCross = new StdCrosswalk();
+		leftSouthRiverStreetCross.pair(rightSouthRiverStreetCross);
 		topWestCenterStreetCross = new StdCrosswalk();
 		bottomWestCenterStreetCross = new StdCrosswalk();
+		topWestCenterStreetCross.pair(bottomWestCenterStreetCross);
 		topEastCenterStreetCross = new StdCrosswalk();
 		bottomEastCenterStreetCross = new StdCrosswalk();
+		topEastCenterStreetCross.pair(bottomEastCenterStreetCross);
 		
 	}
 	

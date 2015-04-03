@@ -1,11 +1,15 @@
 /**
  * Standard Instance of All Crosswalk Lamps
- * @author loewna
- * @version 3.20.15
+ * @author loewna, nathan mudford
+ * @version 4.03.15
  */
 public class StdCrosswalk implements IStdCrossWalk
 {
 	IStdBulb[] bulbs;
+	IButton button;
+	
+	//crosswalk whose bulb states are paired with this.
+	StdCrosswalk oppositeCW;
 	
 	/**
 	 * Constructs a single standard crosswalk light.
@@ -18,42 +22,64 @@ public class StdCrosswalk implements IStdCrossWalk
 		bulbs[0] = new SimpleStdBulb(); //Cross
 		bulbs[1] = new SimpleStdBulb(); //Don't Cross
 		bulbs[2] = new SimpleStdBulb(); //Cross Faster
+		oppositeCW = null;
+		
 	}
 	
 	/**
-	 * Inherited method for setting crosswalk to WALK.
-	 * @returns (a && b && c) - cross on, don't cross & cross faster off
+	 * Pairs this to oppositeCW (the one across the street)
+	 * @param opposite crosswalk opposite of this which is being set
+	 * @return true if the new opposite crosswalk is not null
+	 */
+	public boolean pair(StdCrosswalk opposite){
+		if(opposite == null) return false;
+		oppositeCW = opposite; 
+		opposite.oppositeCW = this;
+		return true;
+	}
+	
+	/**
+	 * Inherited method for setting crosswalk to WALK. Also sets the 
+	 * other crosswalk to WALK. 
+	 * @return true if oppositeCW != null and all bulbs are switched correctly
 	 */
 	public boolean walk() 
 	{
-		boolean a = bulbs[0].on();
-		boolean b = bulbs[1].off();
-		boolean c = bulbs[2].off();
+		if(oppositeCW == null) 
+			return false;
+		boolean a = bulbs[0].on()  && oppositeCW.bulbs[0].on();
+		boolean b = bulbs[1].off() && oppositeCW.bulbs[1].off();
+		boolean c = bulbs[2].off() && oppositeCW.bulbs[2].off();
 		return a && b && c;
 	}
 
 	/**
-	 * Inherited method for setting crosswalk to CROSS FASTER.
-	 * @return (a && b && c) - cross & don't cross off, cross faster on
+	 * Inherited method for setting crosswalk to CROSS FASTER. Also sets the 
+	 * other crosswalk to CROSS FASTER.
+	 * @return true if oppositeCW != null and all bulbs are switched correctly
 	 */
 	public boolean blinkingDontWalk()
 	{
-		boolean a = bulbs[2].on();
-		boolean b = bulbs[0].off();
-		boolean c = bulbs[1].off();
+		if(oppositeCW == null) 
+			return false;
+		boolean a = bulbs[2].on()  && oppositeCW.bulbs[2].on();
+		boolean b = bulbs[0].off() && oppositeCW.bulbs[0].off();
+		boolean c = bulbs[1].off() && oppositeCW.bulbs[1].off();
 		return a && b && c;
 	}
 
 	/**
-	 * Inherited method for setting crosswalk to DON'T WALK.
-	 * @ returns (a && b && c) - cross & cross faster off, don't cross on
+	 * Inherited method for setting crosswalk to DON'T WALK. Also sets the 
+	 * other crosswalk to DON'T WALK.
+	 * @return true if oppositeCW != null and all bulbs are switched correctly
 	 */
 	public boolean dontWalk() 
 	{
-		boolean a = bulbs[1].on();
-		boolean b = bulbs[0].off();
-		boolean c = bulbs[2].off();
+		if(oppositeCW == null) 
+			return false;
+		boolean a = bulbs[1].on()  && oppositeCW.bulbs[1].on();
+		boolean b = bulbs[0].off() && oppositeCW.bulbs[0].off();
+		boolean c = bulbs[2].off() && oppositeCW.bulbs[2].off();
 		return a && b && c;
 	}
-	
 }
