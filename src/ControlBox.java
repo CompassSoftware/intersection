@@ -11,7 +11,7 @@ public class ControlBox {
     public static IStdLamp northRiversLeftLamp;
 	public static IStdLamp northRiversRightLamp;
 	public static IStdLamp southRiversRightLamp;
-	public static IStdLeftLamp southRiversLeftLamp;
+	public static IStdLamp southRiversLeftLamp;
 	public static IStdLamp eastCenterOnlyLamp;
 	public static IStdLamp westCenterOnlyLamp;
 	
