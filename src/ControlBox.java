@@ -71,16 +71,6 @@ public class ControlBox {
 	}
 	
 	/**
-     * Constructor for creating a ControlBox with settings from outside.
-     */
-	public ControlBox(IStdLamp[] lamps, ISensor[] sensor)
-	{
-	    timer = new Timer();
-	    this.lamps = lamps;
-	}
-	
-	
-	/**
 	 * Main
 	 * 
 	 * @param args
