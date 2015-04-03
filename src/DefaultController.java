@@ -126,6 +126,13 @@ public class DefaultController {
 			 */
 		}
 	}
+	/**
+	 * 
+	 * @return the time remaining until the light changes
+	 */
+	public int getTimeRemaining(){
+		return timeRemaining;
+	}
 	
 	/**
 	 * TimerTask class because 
