@@ -8,6 +8,6 @@ public interface IButton {
 	 * Push the button
 	 * @return boolean
 	 */
-	boolean push();
+	abstract boolean push();
 
 }
