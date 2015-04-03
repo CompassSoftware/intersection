@@ -133,7 +133,12 @@ public class DefaultController {
 	public int getTimeRemaining(){
 		return timeRemaining;
 	}
-	
+	/**
+	 * 
+	 */
+	public int getState(){
+		return state;
+	}
 	/**
 	 * TimerTask class because 
 	 * we can't just pass a function
